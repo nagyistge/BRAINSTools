@@ -959,6 +959,7 @@ void itkSaveWithMetaData(int, mxArray *[],
     mexErrMsgTxt(errBuff);
     return;
     }
+
   const mxArray * const     structMx = prhs[1];
   const MatlabStructManager msm(structMx);
 
@@ -1203,6 +1204,12 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
     char errBuff[NRRD_MAX_ERROR_MSG_SIZE] = { '\0' };
     snprintf(errBuff, NRRD_MAX_ERROR_MSG_SIZE, "%s: at line %d", msg.c_str(), __LINE__);
     mexErrMsgTxt(errBuff);
+    }
+  catch(std::exception & stdExcp)
+    {
+    printf("Execption was: ");
+    std::cout << stdExcp.what() << std::endl;
+    //printf(stdExcp);
     }
   catch( ... )
     {
