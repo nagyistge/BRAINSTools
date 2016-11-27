@@ -180,7 +180,7 @@ else()
 
   #------------------------------------------------------------------------------------------
   set(Test_Compare_Command_Line_NHDR_OUTPUT
-    ${TEST_COMPARE_PROGRAM} --inputVolume2 ${TEST_INITIAL_NHDR_OUTPUT} --inputVolume1 ${TEST_BASELINE_NHDR}
+    ${TEST_COMPARE_PROGRAM} --useIdentityMeasurementFrame --inputVolume2 ${TEST_INITIAL_NHDR_OUTPUT} --inputVolume1 ${TEST_BASELINE_NHDR}
     )
   message("Test_Compare_Command_Line_NHDR_OUTPUT=${Test_Compare_Command_Line_NHDR_OUTPUT}")
   # now compare the output with the reference
